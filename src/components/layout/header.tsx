@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, HeartPulse } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -18,10 +18,34 @@ const WHATSAPP_BOOKING_URL = "https://wa.me/1234567890?text=I'd%20like%20to%20bo
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("#home");
 
-  const handleLinkClick = (isMobile = false) => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navLinks.map(link => document.querySelector(link.href));
+      const scrollPosition = window.scrollY + 100;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i] as HTMLElement;
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveLink(navLinks[i].href);
+          break;
+        }
+      }
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleLinkClick = (href: string, isMobile = false) => {
     if (isMobile) {
       setIsOpen(false);
+    }
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -31,8 +55,11 @@ export function Header() {
         key={link.href}
         asChild
         variant="ghost"
-        className="justify-start text-base font-medium text-foreground/80 hover:text-primary"
-        onClick={() => handleLinkClick(isMobile)}
+        className={`justify-start text-base font-medium hover:text-primary ${activeLink === link.href ? 'text-primary' : 'text-foreground/80'}`}
+        onClick={(e) => {
+          e.preventDefault();
+          handleLinkClick(link.href, isMobile);
+        }}
       >
         <Link href={link.href}>{link.label}</Link>
       </Button>
@@ -41,7 +68,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-7xl items-center">
-        <Link href="#home" className="mr-6 flex items-center space-x-2">
+        <Link href="#home" className="mr-6 flex items-center space-x-2" onClick={(e) => {e.preventDefault(); handleLinkClick('#home')}}>
           <HeartPulse className="h-6 w-6 text-primary" />
           <span className="font-bold text-lg">CardioVerse</span>
         </Link>
@@ -64,7 +91,7 @@ export function Header() {
             <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background">
               <div className="flex flex-col h-full">
                 <div className="p-4 border-b">
-                   <Link href="#home" className="flex items-center space-x-2" onClick={() => handleLinkClick(true)}>
+                   <Link href="#home" className="flex items-center space-x-2" onClick={() => handleLinkClick('#home', true)}>
                     <HeartPulse className="h-6 w-6 text-primary" />
                     <span className="font-bold text-lg">CardioVerse</span>
                    </Link>
