@@ -56,7 +56,7 @@ export function Header() {
         key={link.href}
         asChild
         variant="ghost"
-        className={`justify-start text-base font-bold hover:bg-transparent ${activeLink === link.href ? 'text-primary' : 'text-foreground/80 hover:text-primary'}`}
+        className={`justify-start text-base font-bold hover:bg-transparent ${activeLink === link.href ? 'text-primary' : 'text-foreground/80 hover:text-primary hover:text-opacity-100'}`}
         onClick={(e) => {
           e.preventDefault();
           handleLinkClick(link.href, isMobile);
@@ -81,7 +81,7 @@ export function Header() {
         </nav>
 
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <Button asChild variant="default">
+          <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
             <a href={WHATSAPP_BOOKING_URL} target="_blank" rel="noopener noreferrer">Book Now</a>
           </Button>
         </div>
