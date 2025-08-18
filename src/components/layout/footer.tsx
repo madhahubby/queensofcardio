@@ -15,7 +15,6 @@ export function Footer() {
             <Link href="#home" className="text-sm hover:text-primary transition-colors">Home</Link>
             <Link href="#about" className="text-sm hover:text-primary transition-colors">About</Link>
             <Link href="#classes" className="text-sm hover:text-primary transition-colors">Classes</Link>
-            <Link href="#schedule" className="text-sm hover:text-primary transition-colors">Schedule</Link>
             <Link href="#gallery" className="text-sm hover:text-primary transition-colors">Gallery</Link>
           </nav>
           <div className="flex gap-2">

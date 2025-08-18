@@ -31,16 +31,6 @@ const featuredClasses = [
   },
 ];
 
-const schedule = {
-  Monday: "6:00 AM - Sunrise Cycle | 5:30 PM - HIIT Blast",
-  Tuesday: "7:00 AM - Vinyasa Flow | 6:30 PM - Power Pump",
-  Wednesday: "6:00 PM - Neon Spin | 7:00 PM - Core Crusher",
-  Thursday: "9:00 AM - Barre Burn | 7:00 PM - Pulse Pumper",
-  Friday: "6:30 PM - Friday Funk Dance",
-  Saturday: "10:00 AM - Weekend Warrior Bootcamp",
-  Sunday: "4:00 PM - Restorative Yoga",
-};
-
 const galleryImages = [
   { src: 'https://placehold.co/600x400.png', alt: 'Group of people in a spin class', dataAiHint: 'spin class' },
   { src: 'https://placehold.co/400x600.png', alt: 'Woman doing yoga pose', dataAiHint: 'yoga pose' },
@@ -141,39 +131,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Schedule Section */}
-      <section id="schedule" className="py-16 md:py-24 bg-background">
-         <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-               <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground">
-                  Weekly Schedule
-               </h2>
-               <p className="text-muted-foreground mt-2 max-w-xl mx-auto">
-                  Plan your week of workouts with us. Consistency is key!
-               </p>
-            </div>
-            <Card className="shadow-xl">
-               <CardContent className="p-6 md:p-8">
-                  <ul className="space-y-4">
-                     {Object.entries(schedule).map(([day, classes]) => (
-                        <li key={day} className="flex flex-col md:flex-row items-start md:items-center justify-between p-4 rounded-lg bg-secondary">
-                           <p className="font-bold text-lg md:w-40">{day}</p>
-                           <p className="text-sm text-muted-foreground md:text-base flex-1 mt-2 md:mt-0">{classes}</p>
-                        </li>
-                     ))}
-                  </ul>
-               </CardContent>
-            </Card>
-            <div className="text-center mt-12">
-               <Button size="lg" asChild>
-                  <a href={WHATSAPP_BOOKING_URL} target="_blank" rel="noopener noreferrer">Book a Spot</a>
-               </Button>
-            </div>
-         </div>
-      </section>
-
       {/* Gallery Section */}
-      <section id="gallery" className="py-16 md:py-24 bg-secondary">
+      <section id="gallery" className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground">
