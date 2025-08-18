@@ -56,7 +56,7 @@ export function Header() {
         key={link.href}
         asChild
         variant="ghost"
-        className={`justify-start text-base font-medium hover:bg-transparent hover:text-primary ${activeLink === link.href ? 'text-primary' : 'text-foreground/80'}`}
+        className={`justify-start text-base font-bold hover:bg-transparent ${activeLink === link.href ? 'text-primary' : 'text-foreground/80 hover:text-primary'}`}
         onClick={(e) => {
           e.preventDefault();
           handleLinkClick(link.href, isMobile);
@@ -69,19 +69,24 @@ export function Header() {
   return (
     <header className={`sticky top-0 z-50 w-full transition-colors duration-300 ${isScrolled ? 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b' : 'bg-transparent'}`}>
       <div className="container flex h-16 max-w-7xl items-center">
-        <Link href="#home" className="mr-6 flex items-center space-x-2" onClick={(e) => {e.preventDefault(); handleLinkClick('#home')}}>
-          <HeartPulse className="h-6 w-6 text-primary" />
-          <span className="font-bold text-lg">CARDIOVERSE</span>
-        </Link>
-        <nav className="hidden md:flex items-center space-x-1">
+        <div className="flex-1 flex items-center justify-start">
+            <Link href="#home" className="flex items-center space-x-2" onClick={(e) => {e.preventDefault(); handleLinkClick('#home')}}>
+              <HeartPulse className="h-6 w-6 text-primary" />
+              <span className="font-bold text-lg">CARDIOVERSE</span>
+            </Link>
+        </div>
+        
+        <nav className="hidden md:flex items-center justify-center space-x-1 flex-1">
           {renderNavLinks()}
         </nav>
+
         <div className="flex flex-1 items-center justify-end space-x-2">
           <Button asChild variant="default">
             <a href={WHATSAPP_BOOKING_URL} target="_blank" rel="noopener noreferrer">Book Now</a>
           </Button>
         </div>
-        <div className="md:hidden">
+
+        <div className="md:hidden flex-1 justify-end flex">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
