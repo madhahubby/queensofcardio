@@ -7,15 +7,16 @@ export function Footer() {
     <footer className="bg-secondary">
       <div className="container py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="#home" className="flex items-center space-x-2">
             <HeartPulse className="h-6 w-6 text-primary" />
             <span className="font-bold text-lg">CardioVerse</span>
           </Link>
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-            <Link href="/" className="text-sm hover:text-primary transition-colors">Home</Link>
-            <Link href="/schedule" className="text-sm hover:text-primary transition-colors">Schedule</Link>
-            <Link href="/gallery" className="text-sm hover:text-primary transition-colors">Gallery</Link>
-            <Link href="/dashboard" className="text-sm hover:text-primary transition-colors">Dashboard</Link>
+            <Link href="#home" className="text-sm hover:text-primary transition-colors">Home</Link>
+            <Link href="#about" className="text-sm hover:text-primary transition-colors">About</Link>
+            <Link href="#classes" className="text-sm hover:text-primary transition-colors">Classes</Link>
+            <Link href="#schedule" className="text-sm hover:text-primary transition-colors">Schedule</Link>
+            <Link href="#gallery" className="text-sm hover:text-primary transition-colors">Gallery</Link>
           </nav>
           <div className="flex gap-2">
             <Button variant="ghost" size="icon" asChild>

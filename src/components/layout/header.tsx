@@ -4,20 +4,26 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, HeartPulse } from "lucide-react";
-import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/schedule", label: "Schedule" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/dashboard", label: "Dashboard" },
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#classes", label: "Classes" },
+  { href: "#schedule", label: "Schedule" },
+  { href: "#gallery", label: "Gallery" },
 ];
 
+const WHATSAPP_BOOKING_URL = "https://wa.me/1234567890?text=I'd%20like%20to%20book%20a%20class!";
+
 export function Header() {
-  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleLinkClick = (isMobile = false) => {
+    if (isMobile) {
+      setIsOpen(false);
+    }
+  };
 
   const renderNavLinks = (isMobile = false) =>
     navLinks.map((link) => (
@@ -25,12 +31,8 @@ export function Header() {
         key={link.href}
         asChild
         variant="ghost"
-        className={cn(
-          "justify-start text-base font-medium",
-          pathname === link.href ? "text-primary hover:text-primary" : "text-foreground/80 hover:text-foreground",
-          isMobile && "w-full text-lg"
-        )}
-        onClick={() => isMobile && setIsOpen(false)}
+        className="justify-start text-base font-medium text-foreground/80 hover:text-primary"
+        onClick={() => handleLinkClick(isMobile)}
       >
         <Link href={link.href}>{link.label}</Link>
       </Button>
@@ -39,7 +41,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-7xl items-center">
-        <Link href="/" className="mr-6 flex items-center space-x-2">
+        <Link href="#home" className="mr-6 flex items-center space-x-2">
           <HeartPulse className="h-6 w-6 text-primary" />
           <span className="font-bold text-lg">CardioVerse</span>
         </Link>
@@ -47,11 +49,8 @@ export function Header() {
           {renderNavLinks()}
         </nav>
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <Button variant="ghost" asChild>
-            <Link href="/login">Login</Link>
-          </Button>
           <Button asChild>
-            <Link href="/signup">Sign Up</Link>
+            <a href={WHATSAPP_BOOKING_URL} target="_blank" rel="noopener noreferrer">Book Now</a>
           </Button>
         </div>
         <div className="md:hidden">
@@ -65,7 +64,7 @@ export function Header() {
             <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background">
               <div className="flex flex-col h-full">
                 <div className="p-4 border-b">
-                   <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
+                   <Link href="#home" className="flex items-center space-x-2" onClick={() => handleLinkClick(true)}>
                     <HeartPulse className="h-6 w-6 text-primary" />
                     <span className="font-bold text-lg">CardioVerse</span>
                    </Link>
