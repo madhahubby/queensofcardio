@@ -56,7 +56,7 @@ export function Header() {
         key={link.href}
         asChild
         variant="ghost"
-        className={`justify-start text-base font-medium hover:text-primary ${activeLink === link.href ? 'text-primary' : 'text-foreground/80'}`}
+        className={`justify-start text-base font-medium hover:bg-transparent hover:text-primary ${activeLink === link.href ? 'text-primary' : 'text-foreground/80'}`}
         onClick={(e) => {
           e.preventDefault();
           handleLinkClick(link.href, isMobile);
