@@ -32,7 +32,6 @@ export default function Home() {
           priority
         />
         <div className="relative z-10 p-4">
-            <Image src="https://placehold.co/800x200.png" alt="Queens of Cardio" width={800} height={200} data-ai-hint="fitness logo" />
         </div>
       </section>
 
