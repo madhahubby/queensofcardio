@@ -23,11 +23,15 @@ export function Header() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
-      const sections = navLinks.map(link => document.querySelector(link.href));
+      const sections = navLinks.map(link => {
+        const el = document.querySelector(link.href);
+        // Ensure to check if element exists before accessing properties
+        return el ? el as HTMLElement : null;
+      });
       const scrollPosition = window.scrollY + 100;
 
       for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i] as HTMLElement;
+        const section = sections[i];
         if (section && section.offsetTop <= scrollPosition) {
           setActiveLink(navLinks[i].href);
           break;
@@ -40,43 +44,46 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLinkClick = (href: string, isMobile = false) => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isMobile = false) => {
+    e.preventDefault();
     if (isMobile) {
       setIsOpen(false);
     }
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Fallback for when selector is not found
+      window.location.hash = href;
     }
+    setActiveLink(href);
   };
 
   const renderNavLinks = (isMobile = false) =>
     navLinks.map((link) => (
-      <Button
+      <Link
+        href={link.href}
         key={link.href}
-        asChild
-        variant="ghost"
-        className={`justify-start text-base font-bold hover:bg-transparent ${activeLink === link.href ? 'text-primary' : 'text-foreground/80 hover:text-primary hover:text-opacity-100'}`}
-        onClick={(e) => {
-          e.preventDefault();
-          handleLinkClick(link.href, isMobile);
-        }}
+        onClick={(e) => handleLinkClick(e, link.href, isMobile)}
+        className={`font-bold transition-colors ${
+          activeLink === link.href ? 'text-primary' : 'text-foreground/80'
+        } hover:text-primary`}
       >
-        <Link href={link.href}>{link.label}</Link>
-      </Button>
+        {link.label}
+      </Link>
     ));
 
   return (
     <header className={`sticky top-0 z-50 w-full transition-colors duration-300 ${isScrolled ? 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b' : 'bg-transparent'}`}>
       <div className="container flex h-16 max-w-7xl items-center">
         <div className="flex-1 flex items-center justify-start">
-            <Link href="#home" className="flex items-center space-x-2" onClick={(e) => {e.preventDefault(); handleLinkClick('#home')}}>
+            <Link href="#home" className="flex items-center space-x-2" onClick={(e) => handleLinkClick(e, '#home')}>
               <HeartPulse className="h-6 w-6 text-primary" />
               <span className="font-bold text-lg">CARDIOVERSE</span>
             </Link>
         </div>
         
-        <nav className="hidden md:flex items-center justify-center space-x-1 flex-1">
+        <nav className="hidden md:flex items-center justify-center space-x-6 flex-1">
           {renderNavLinks()}
         </nav>
 
@@ -97,13 +104,24 @@ export function Header() {
             <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background">
               <div className="flex flex-col h-full">
                 <div className="p-4 border-b">
-                   <Link href="#home" className="flex items-center space-x-2" onClick={() => handleLinkClick('#home', true)}>
+                   <Link href="#home" className="flex items-center space-x-2" onClick={(e) => handleLinkClick(e, '#home', true)}>
                     <HeartPulse className="h-6 w-6 text-primary" />
                     <span className="font-bold text-lg">CARDIOVERSE</span>
                    </Link>
                 </div>
                 <nav className="flex flex-col gap-4 p-4">
-                  {renderNavLinks(true)}
+                  {navLinks.map((link) => (
+                    <Link
+                      href={link.href}
+                      key={link.href}
+                      onClick={(e) => handleLinkClick(e, link.href, true)}
+                      className={`font-bold text-lg transition-colors ${
+                        activeLink === link.href ? 'text-primary' : 'text-foreground/80'
+                      } hover:text-primary`}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
                 </nav>
               </div>
             </SheetContent>
