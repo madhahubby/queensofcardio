@@ -65,9 +65,7 @@ export function Header() {
         href={link.href}
         key={link.href}
         onClick={(e) => handleLinkClick(e, link.href, isMobile)}
-        className={`font-bold transition-colors ${
-          activeLink === link.href ? 'text-primary' : 'text-foreground/80'
-        } hover:text-primary`}
+        className={`font-bold transition-colors text-foreground/80 hover:text-foreground`}
       >
         {link.label}
       </Link>
@@ -115,9 +113,7 @@ export function Header() {
                       href={link.href}
                       key={link.href}
                       onClick={(e) => handleLinkClick(e, link.href, true)}
-                      className={`font-bold text-lg transition-colors ${
-                        activeLink === link.href ? 'text-primary' : 'text-foreground/80'
-                      } hover:text-primary`}
+                      className={`font-bold text-lg transition-colors text-foreground/80 hover:text-foreground`}
                     >
                       {link.label}
                     </Link>
