@@ -72,7 +72,7 @@ export function Header() {
     ));
 
   return (
-    <header className={`sticky top-0 z-50 w-full transition-colors duration-300 ${isScrolled ? 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 z-50 w-full transition-colors duration-300 ${isScrolled ? 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b' : 'bg-transparent'}`}>
       <div className="container flex h-16 max-w-7xl items-center">
         <div className="flex-1 flex items-center justify-start">
             <Link href="#home" className="flex items-center space-x-2" onClick={(e) => handleLinkClick(e, '#home')}>
