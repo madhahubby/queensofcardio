@@ -4,11 +4,11 @@
 
 @layer base {
   :root {
-    --background: 240 21% 12%; /* Deep Navy */
+    --background: 0 0% 0%; /* Black */
     --foreground: 0 0% 98%; /* White */
     --card: 240 20% 15%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 21% 12%;
+    --popover: 0 0% 0%;
     --popover-foreground: 0 0% 98%;
     --primary: 330 100% 71%; /* Neon Pink */
     --primary-foreground: 330 30% 10%;
@@ -27,11 +27,11 @@
   }
  
   .dark {
-    --background: 240 21% 12%; /* Deep Navy */
+    --background: 0 0% 0%; /* Black */
     --foreground: 0 0% 98%; /* White */
     --card: 240 20% 15%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 21% 12%;
+    --popover: 0 0% 0%;
     --popover-foreground: 0 0% 98%;
     --primary: 330 100% 71%; /* Neon Pink */
     --primary-foreground: 330 30% 10%;
