@@ -33,7 +33,7 @@ export default function Home() {
         />
         <div className="relative z-10 p-4">
             <h2 className="text-2xl md:text-4xl font-light uppercase tracking-widest text-neutral-200">We Are</h2>
-            <h1 className="text-6xl md:text-9xl font-extrabold tracking-tighter text-primary">
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-primary">
                 CARDIOVERSE
             </h1>
             <p className="text-lg md:text-xl text-neutral-300 mt-2">Your Universe of Fitness</p>
