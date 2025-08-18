@@ -22,12 +22,12 @@ export default function Home() {
   return (
     <div className="bg-background text-foreground">
       {/* Hero Section */}
-      <section id="home" className="relative w-full aspect-[3/2] flex flex-col items-center justify-center text-center -mt-16">
+      <section id="home" className="relative w-full aspect-[3/2] flex flex-col items-center justify-center">
         <Image
           src="/my-hero-image.jpg"
           alt="Hero background image"
           fill
-          style={{ objectFit: "contain" }}
+          style={{ objectFit: "cover" }}
           className="z-0 opacity-40"
           priority
         />
