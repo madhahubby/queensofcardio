@@ -4,18 +4,18 @@ import { Button } from '../ui/button';
 
 export function Footer() {
   return (
-    <footer className="bg-secondary">
+    <footer className="bg-secondary border-t">
       <div className="container py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <Link href="#home" className="flex items-center space-x-2">
-            <HeartPulse className="h-6 w-6 text-primary" />
-            <span className="font-bold text-lg">CardioVerse</span>
+            <HeartPulse className="h-6 w-6 text-accent" />
+            <span className="font-bold text-lg">CARDIOVERSE</span>
           </Link>
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-            <Link href="#home" className="text-sm hover:text-primary transition-colors">Home</Link>
-            <Link href="#about" className="text-sm hover:text-primary transition-colors">About</Link>
-            <Link href="#classes" className="text-sm hover:text-primary transition-colors">Classes</Link>
-            <Link href="#gallery" className="text-sm hover:text-primary transition-colors">Gallery</Link>
+            <Link href="#home" className="text-sm text-muted-foreground hover:text-primary transition-colors">Home</Link>
+            <Link href="#about" className="text-sm text-muted-foreground hover:text-primary transition-colors">About</Link>
+            <Link href="#classes" className="text-sm text-muted-foreground hover:text-primary transition-colors">Workouts</Link>
+            <Link href="#gallery" className="text-sm text-muted-foreground hover:text-primary transition-colors">Features</Link>
           </nav>
           <div className="flex gap-2">
             <Button variant="ghost" size="icon" asChild>
