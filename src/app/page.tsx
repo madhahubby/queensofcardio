@@ -22,14 +22,15 @@ export default function Home() {
   return (
     <div className="bg-background text-foreground">
       {/* Hero Section */}
-      <section id="home" className="relative w-full aspect-[3/2] flex flex-col items-center justify-center">
+      <section id="home" className="relative w-full aspect-[3/2] flex flex-col items-center justify-center overflow-hidden rounded-2xl">
         <Image
           src="/my-hero-image.jpg"
           alt="Hero background image"
           fill
           style={{ objectFit: "cover" }}
-          className="z-0 opacity-40"
+          className="z-0 opacity-50"
           priority
+          key={new Date().getTime()}
         />
         <div className="relative z-10 p-4">
         </div>
