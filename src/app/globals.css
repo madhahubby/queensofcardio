@@ -16,13 +16,13 @@
     --secondary-foreground: 0 0% 98%;
     --muted: 240 20% 18%;
     --muted-foreground: 240 5% 65%;
-    --accent: 47 100% 69%; /* Sunny Yellow */
-    --accent-foreground: 240 10% 3.9%;
+    --accent: 330 100% 80%; /* Lighter Pink */
+    --accent-foreground: 330 40% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 20% 25%;
     --input: 240 20% 20%;
-    --ring: 47 100% 69%;
+    --ring: 330 100% 71%;
     --radius: 0.75rem;
   }
  
@@ -39,13 +39,13 @@
     --secondary-foreground: 0 0% 98%;
     --muted: 240 20% 18%;
     --muted-foreground: 240 5% 65%;
-    --accent: 47 100% 69%; /* Sunny Yellow */
-    --accent-foreground: 240 10% 3.9%;
+    --accent: 330 100% 80%; /* Lighter Pink */
+    --accent-foreground: 330 40% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 20% 25%;
     --input: 240 20% 20%;
-    --ring: 47 100% 69%;
+    --ring: 330 100% 71%;
     --radius: 0.75rem;
   }
 }

@@ -8,7 +8,7 @@ export function Footer() {
       <div className="container py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <Link href="#home" className="flex items-center space-x-2">
-            <HeartPulse className="h-6 w-6 text-accent" />
+            <HeartPulse className="h-6 w-6 text-primary" />
             <span className="font-bold text-lg">CARDIOVERSE</span>
           </Link>
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
