@@ -24,12 +24,11 @@ export default function Home() {
       {/* Hero Section */}
       <section id="home" className="relative h-[60vh] md:h-[80vh] w-full flex flex-col items-center justify-center text-center">
         <Image
-          src="https://placehold.co/1920x1080.png"
-          alt="Person in a yoga pose outdoors with a lush green background"
+          src="/my-hero-image.jpg"
+          alt="Hero background image"
           fill
           style={{ objectFit: "cover" }}
           className="z-0 opacity-40"
-          data-ai-hint="outdoor yoga"
           priority
         />
         <div className="relative z-10 p-4">
