@@ -86,7 +86,7 @@ export function Header() {
         </nav>
 
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <Button asChild variant="outline" className="border-foreground text-foreground hover:bg-foreground hover:text-background font-bold">
+          <Button asChild variant="outline" className="border-foreground text-foreground hover:bg-foreground hover:text-background font-bold bg-transparent">
             <a href={WHATSAPP_BOOKING_URL} target="_blank" rel="noopener noreferrer">Book Now</a>
           </Button>
         </div>
