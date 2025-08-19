@@ -65,7 +65,7 @@ export function Header() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 md:top-4 md:mx-4`}>
       <div className={`container flex h-16 items-center transition-colors duration-300 justify-between ${isScrolled || isOpen ? 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:border md:rounded-2xl' : 'bg-transparent'}`}>
         <Link href="/" className="flex items-center space-x-2">
-          <Image src="/membership image.png" alt="QueensOfCardio Logo" width={24} height={24} />
+          <Image src="/membership image.png" alt="QueensOfCardio Logo" width={24} height={24} className="rounded-lg" />
           <span className="font-bold text-lg">QUEENSOFCARDIO</span>
         </Link>
         
@@ -91,7 +91,7 @@ export function Header() {
               <div className="flex flex-col h-full">
                 <div className="p-4 border-b border-border">
                    <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
-                    <Image src="/membership image.png" alt="QueensOfCardio Logo" width={24} height={24} />
+                    <Image src="/membership image.png" alt="QueensOfCardio Logo" width={24} height={24} className="rounded-lg" />
                     <span className="font-bold text-lg">QUEENSOFCARDIO</span>
                    </Link>
                 </div>

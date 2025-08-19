@@ -10,7 +10,7 @@ export function Footer() {
       <div className="container py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <Link href="/" className="flex items-center space-x-2">
-            <Image src="/membership image.png" alt="QueensOfCardio Logo" width={24} height={24} />
+            <Image src="/membership image.png" alt="QueensOfCardio Logo" width={24} height={24} className="rounded-lg" />
             <span className="font-bold text-lg">QUEENSOFCARDIO</span>
           </Link>
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
