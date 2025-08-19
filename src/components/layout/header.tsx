@@ -13,7 +13,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/workouts", label: "Workouts" },
-  { href: "/#gallery", label: "Features" },
+  { href: "/features", label: "Features" },
 ];
 
 const WHATSAPP_BOOKING_URL = "https://wa.me/1234567890?text=I'd%20like%20to%20book%20a%20class!";
@@ -37,7 +37,9 @@ export function Header() {
     if (href.startsWith('/#')) {
         if (pathname !== '/') {
             window.location.href = `/${href}`;
+            return;
         }
+        e.preventDefault();
         const element = document.querySelector(href.substring(1));
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });

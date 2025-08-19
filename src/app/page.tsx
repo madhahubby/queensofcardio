@@ -13,7 +13,7 @@ const workoutImages = [
 
 const featureBlocks = [
     { src: `/bmicalcsitepic.png?v=${new Date().getTime()}`, alt: 'BMI Calculator page screenshot', title: 'Calculate Your BMI', dataAiHint: 'bmi calculator', href: 'https://queensofcardiobmicalc.vercel.app', external: true },
-    { src: `/routinegenai.png?v=${new Date().getTime()}`, alt: 'AI generating a fitness routine on a tablet', title: 'Fitness Routine Generator', dataAiHint: 'ai fitness', href: 'https://fitgenius-beta.vercel.app/generator', external: true },
+    { src: `/routinegenai.png?v=${new Date().getTime()}`, alt: 'AI generating a fitness routine on a tablet', title: 'Fitness Routine Generator', dataAiHint: 'ai fitness', href: '/fitness-generator', external: false },
 ];
 
 const WHATSAPP_BOOKING_URL = "https://wa.me/1234567890?text=I'd%20like%20to%20book%20a%20class!";
@@ -88,8 +88,16 @@ export default function Home() {
                       </div>
                     );
 
+                    if (block.external) {
+                      return (
+                        <a href={block.href} key={index} target="_blank" rel="noopener noreferrer">
+                          {CardComponent}
+                        </a>
+                      );
+                    }
+                    
                     return (
-                      <Link href={block.href} key={index} target={block.external ? '_blank' : undefined} rel={block.external ? 'noopener noreferrer' : undefined}>
+                      <Link href={block.href} key={index}>
                         {CardComponent}
                       </Link>
                     );
