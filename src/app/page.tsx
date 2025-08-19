@@ -14,7 +14,7 @@ const workoutImages = [
 const featureBlocks = [
     { src: 'https://placehold.co/600x600.png', alt: 'Group of smiling people in a fitness class', title: 'Join Our Community', dataAiHint: 'fitness community', href: '#about', external: false },
     { src: '/bmicalcsitepic.png', alt: 'BMI Calculator page screenshot', title: 'Calculate Your BMI', dataAiHint: 'bmi calculator', href: 'https://queensofcardiobmicalc.vercel.app', external: true },
-    { src: 'https://placehold.co/600x600.png', alt: 'AI generating a fitness routine on a tablet', title: 'Fitness Routine Generator', dataAiHint: 'ai fitness', href: '/fitness-generator', external: false },
+    { src: '/routinegenai.png', alt: 'AI generating a fitness routine on a tablet', title: 'Fitness Routine Generator', dataAiHint: 'ai fitness', href: '/fitness-generator', external: false },
 ];
 
 const WHATSAPP_BOOKING_URL = "https://wa.me/1234567890?text=I'd%20like%20to%20book%20a%20class!";
