@@ -12,7 +12,7 @@ const workoutImages = [
 ];
 
 const featureBlocks = [
-    { src: '/bmicalcsitepic.png', alt: 'BMI Calculator page screenshot', title: 'Calculate Your BMI', dataAiHint: 'bmi calculator', href: 'https://queensofcardiobmicalc.vercel.app', external: true },
+    { src: `/bmicalcsitepic.png?v=${new Date().getTime()}`, alt: 'BMI Calculator page screenshot', title: 'Calculate Your BMI', dataAiHint: 'bmi calculator', href: 'https://queensofcardiobmicalc.vercel.app', external: true },
     { src: '/routinegenai.png', alt: 'AI generating a fitness routine on a tablet', title: 'Fitness Routine Generator', dataAiHint: 'ai fitness', href: 'https://fitgenius-beta.vercel.app/generator', external: true },
 ];
 
