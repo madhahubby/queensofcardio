@@ -17,7 +17,6 @@ export function Footer() {
             <Link href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">Home</Link>
             <Link href="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">About</Link>
             <Link href="/workouts" className="text-sm text-muted-foreground hover:text-primary transition-colors">Workouts</Link>
-            <Link href="/features" className="text-sm text-muted-foreground hover:text-primary transition-colors">Features</Link>
           </nav>
           <div className="flex gap-2">
             <Button variant="ghost" size="icon" asChild>

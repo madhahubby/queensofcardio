@@ -13,7 +13,6 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/workouts", label: "Workouts" },
-  { href: "/features", label: "Features" },
 ];
 
 const WHATSAPP_BOOKING_URL = "https://wa.me/1234567890?text=I'd%20like%20to%20book%20a%20class!";
