@@ -71,21 +71,33 @@ export default function Home() {
       <section id="gallery" className="py-16 md:py-24">
           <div className="container mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {featureBlocks.map((block, index) => (
-                    <Link href={block.href} key={index} className="relative aspect-video group overflow-hidden rounded-lg" target={block.external ? '_blank' : undefined} rel={block.external ? 'noopener noreferrer' : undefined}>
-                       <Image
-                          src={block.src}
-                          alt={block.alt}
-                          fill
-                          style={{ objectFit: 'cover' }}
-                          className="transition-transform duration-300 group-hover:scale-105"
-                          data-ai-hint={block.dataAiHint}
-                       />
-                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4">
-                            <h3 className="text-xl font-bold text-white text-center pb-2">{block.title}</h3>
-                       </div>
-                    </Link>
-                  ))}
+                  {featureBlocks.map((block, index) => {
+                    const CardComponent = (
+                      <div className="relative aspect-video group overflow-hidden rounded-lg">
+                         <Image
+                            src={block.src}
+                            alt={block.alt}
+                            fill
+                            style={{ objectFit: 'cover' }}
+                            className="transition-transform duration-300 group-hover:scale-105"
+                            data-ai-hint={block.dataAiHint}
+                         />
+                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4">
+                              <h3 className="text-xl font-bold text-white text-center pb-2">{block.title}</h3>
+                         </div>
+                      </div>
+                    );
+
+                    if (block.href === '/fitness-generator') {
+                      return <div key={index}>{CardComponent}</div>;
+                    }
+
+                    return (
+                      <Link href={block.href} key={index} target={block.external ? '_blank' : undefined} rel={block.external ? 'noopener noreferrer' : undefined}>
+                        {CardComponent}
+                      </Link>
+                    );
+                  })}
               </div>
           </div>
       </section>
