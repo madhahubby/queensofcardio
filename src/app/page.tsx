@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { Zap } from 'lucide-react';
 import Image from 'next/image';
@@ -22,7 +23,7 @@ export default function Home() {
   return (
     <div className="bg-background text-foreground">
       {/* Hero Section */}
-      <section id="home" className="relative w-full aspect-[3/2] flex flex-col items-center justify-center overflow-hidden rounded-2xl">
+      <section id="home" className="relative w-full h-[60vh] md:aspect-[3/2] md:h-auto flex flex-col items-center justify-center overflow-hidden">
         <div className="absolute inset-0 -z-10 h-full w-full bg-background bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
         <div className="relative z-10 p-4 text-center">
             <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary-foreground">
@@ -34,7 +35,7 @@ export default function Home() {
       {/* Membership Section */}
       <section id="about" className="py-16 md:py-24">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-8 text-center md:text-left">
-            <Image src="/membership image.png" alt="Person sitting on a yoga mat" width={200} height={200} className="rounded-lg shadow-2xl" data-ai-hint="membership" />
+            <Image src="/membership image.png" alt="Person sitting on a yoga mat" width={300} height={300} className="rounded-lg shadow-2xl" data-ai-hint="membership" />
             <h2 className="text-3xl md:text-5xl font-bold max-w-lg leading-tight">
                 One membership for all your fitness needs.
             </h2>
@@ -72,7 +73,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {featureBlocks.map((block, index) => (
-                      <div key={index} className="relative aspect-video md:aspect-square group overflow-hidden rounded-lg">
+                      <div key={index} className="relative aspect-video group overflow-hidden rounded-lg">
                            <Image
                               src={block.src}
                               alt={block.alt}
