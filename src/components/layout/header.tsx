@@ -15,7 +15,7 @@ const navLinks = [
   { href: "/workouts", label: "Workouts" },
 ];
 
-const WHATSAPP_BOOKING_URL = "https://wa.me/1234567890?text=I'd%20like%20to%20book%20a%20class!";
+const WHATSAPP_BOOKING_URL = "https://wa.link/utohga";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);

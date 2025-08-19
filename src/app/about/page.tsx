@@ -75,7 +75,7 @@ export default function AboutPage() {
           <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-muted-foreground">
             Become a part of a community that celebrates every step, squat, and success. Your journey to a healthier, happier you starts here.
           </p>
-          <a href="https://wa.me/1234567890?text=I'd%20like%20to%20book%20a%20class!" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.link/utohga" target="_blank" rel="noopener noreferrer">
             <button className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-8 rounded-lg text-lg">
               Start Your Journey
             </button>

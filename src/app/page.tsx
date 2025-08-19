@@ -12,11 +12,11 @@ const workoutImages = [
 ];
 
 const featureBlocks = [
-    { src: `/bmicalcsitepic.png?v=${new Date().getTime()}`, alt: 'BMI Calculator page screenshot', title: 'Calculate Your BMI', dataAiHint: 'bmi calculator', href: 'https://queensofcardiobmicalc.vercel.app', external: true },
-    { src: `/routinegenai.png?v=${new Date().getTime()}`, alt: 'AI generating a fitness routine on a tablet', title: 'AI Fitness Generator', dataAiHint: 'ai fitness', href: 'https://fitgenius-beta.vercel.app/generator', external: true },
+    { src: `/bmicalcsitepic.png?v=1721997993000`, alt: 'BMI Calculator page screenshot', title: 'Calculate Your BMI', dataAiHint: 'bmi calculator', href: 'https://queensofcardiobmicalc.vercel.app', external: true },
+    { src: `/routinegenai.png?v=1721997993000`, alt: 'AI generating a fitness routine on a tablet', title: 'AI Fitness Generator', dataAiHint: 'ai fitness', href: 'https://fitgenius-beta.vercel.app/generator', external: true },
 ];
 
-const WHATSAPP_BOOKING_URL = "https://wa.me/1234567890?text=I'd%20like%20to%20book%20a%20class!";
+const WHATSAPP_BOOKING_URL = "https://wa.link/utohga";
 
 export default function Home() {
   return (
