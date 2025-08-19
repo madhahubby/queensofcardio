@@ -29,6 +29,10 @@ const heroGridImages = [
   { src: 'https://placehold.co/400x300.png', alt: 'Kettlebells on a gym floor', dataAiHint: 'kettlebells gym', className: '' },
   { src: 'https://placehold.co/400x300.png', alt: 'Woman smiling after a workout', dataAiHint: 'woman smiling', className: '' },
   { src: 'https://placehold.co/400x600.png', alt: 'Woman on a rowing machine', dataAiHint: 'woman rowing', className: 'row-span-2' },
+  { src: 'https://placehold.co/800x600.png', alt: 'Fitness class in a modern gym', dataAiHint: 'fitness class', className: 'col-span-2 row-span-2' },
+  { src: 'https://placehold.co/400x600.png', alt: 'Woman doing squats', dataAiHint: 'woman squats', className: 'row-span-2' },
+  { src: 'https://placehold.co/400x300.png', alt: 'Dumbbells rack', dataAiHint: 'dumbbells rack', className: '' },
+  { src: 'https://placehold.co/400x300.png', alt: 'Woman tying shoelaces', dataAiHint: 'tying shoelaces', className: '' },
 ];
 
 export default function Home() {
