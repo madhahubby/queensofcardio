@@ -39,7 +39,7 @@ export default function Home() {
       {/* Membership Section */}
       <section id="about" className="py-16 md:py-24">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-8 text-center md:text-left">
-            <Image src="https://placehold.co/400x400.png" alt="Person sitting on a yoga mat" width={200} height={200} className="rounded-lg shadow-2xl" data-ai-hint="yoga mat" />
+            <Image src="/membership image.png" alt="Person sitting on a yoga mat" width={200} height={200} className="rounded-lg shadow-2xl" data-ai-hint="membership" />
             <h2 className="text-3xl md:text-5xl font-bold max-w-lg leading-tight">
                 One membership for all your fitness needs.
             </h2>
