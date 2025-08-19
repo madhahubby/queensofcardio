@@ -18,14 +18,43 @@ const featureBlocks = [
 
 const WHATSAPP_BOOKING_URL = "https://wa.link/utohga";
 
+const heroGridImages = [
+  { src: 'https://placehold.co/800x600.png', alt: 'Woman stretching before workout', dataAiHint: 'woman stretching', className: 'col-span-2 row-span-2' },
+  { src: 'https://placehold.co/400x600.png', alt: 'Woman lifting weights', dataAiHint: 'woman lifting weights', className: '' },
+  { src: 'https://placehold.co/800x600.png', alt: 'Group of women in a spin class', dataAiHint: 'spin class', className: 'col-span-2 row-span-2' },
+  { src: 'https://placehold.co/400x600.png', alt: 'Woman on a treadmill', dataAiHint: 'woman treadmill', className: '' },
+  { src: 'https://placehold.co/400x300.png', alt: 'Close up of running shoes', dataAiHint: 'running shoes', className: '' },
+  { src: 'https://placehold.co/400x300.png', alt: 'Woman drinking water after workout', dataAiHint: 'woman drinking water', className: '' },
+  { src: 'https://placehold.co/400x600.png', alt: 'Woman doing yoga pose', dataAiHint: 'woman yoga', className: 'row-span-2' },
+  { src: 'https://placehold.co/400x300.png', alt: 'Kettlebells on a gym floor', dataAiHint: 'kettlebells gym', className: '' },
+  { src: 'https://placehold.co/400x300.png', alt: 'Woman smiling after a workout', dataAiHint: 'woman smiling', className: '' },
+  { src: 'https://placehold.co/400x600.png', alt: 'Woman on a rowing machine', dataAiHint: 'woman rowing', className: 'row-span-2' },
+];
+
 export default function Home() {
   return (
     <div className="bg-background text-foreground">
       {/* Hero Section */}
-      <section id="home" className="relative w-full h-[75vh] flex flex-col items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 -z-10 h-full w-full bg-background bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-        <div className="relative z-10 p-4 text-center">
-            <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary-foreground">
+      <section id="home" className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 w-full h-full z-0">
+          <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-fr gap-4 h-full">
+            {heroGridImages.map((image, index) => (
+              <div key={index} className={`relative ${image.className}`}>
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  data-ai-hint={image.dataAiHint}
+                  className="grayscale opacity-30"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="absolute inset-0 bg-black/50 z-10" />
+        <div className="relative z-20 p-4 text-center">
+            <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-white">
               We are Queens Of Cardio
             </h1>
         </div>
@@ -42,7 +71,7 @@ export default function Home() {
       </section>
       
       {/* Workouts Section */}
-      <section id="classes" className="py-16 md:py-24 bg-background">
+      <section id="classes" className="py-16 md:py-24 bg-black">
           <div className="container mx-auto px-4">
               <div className="text-center mb-12">
                   <h2 className="text-3xl md:text-4xl font-bold">
