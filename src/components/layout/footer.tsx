@@ -10,7 +10,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <Link href="/" className="flex items-center space-x-2">
             <HeartPulse className="h-6 w-6 text-primary" />
-            <span className="font-bold text-lg">CARDIOVERSE</span>
+            <span className="font-bold text-lg">QUEENSOFCARDIO</span>
           </Link>
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             <Link href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">Home</Link>
@@ -37,7 +37,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-6 text-center text-sm text-muted-foreground border-t border-border pt-6">
-          &copy; {new Date().getFullYear()} CardioVerse. All rights reserved.
+          &copy; {new Date().getFullYear()} QueensOfCardio. All rights reserved.
         </div>
       </div>
     </footer>

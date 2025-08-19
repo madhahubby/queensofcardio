@@ -9,7 +9,7 @@ export default function AboutPage() {
       <section className="py-20 md:py-32 bg-secondary">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-extrabold text-primary mb-4">
-            About CardioVerse
+            About QueensOfCardio
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Discover the heart and soul behind your favorite fitness community. We're more than just workouts; we're a movement.
@@ -33,7 +33,7 @@ export default function AboutPage() {
                   One membership for all your fitness needs.
               </h2>
               <p className="text-lg text-muted-foreground">
-                  At CardioVerse, we believe that fitness should be accessible, fun, and empowering. Our mission is to provide a diverse range of workouts that cater to every fitness level and interest. Whether you're a seasoned athlete or just starting your fitness journey, we have something for you.
+                  At QueensOfCardio, we believe that fitness should be accessible, fun, and empowering. Our mission is to provide a diverse range of workouts that cater to every fitness level and interest. Whether you're a seasoned athlete or just starting your fitness journey, we have something for you.
               </p>
             </div>
         </div>
@@ -61,7 +61,7 @@ export default function AboutPage() {
               <Users className="w-12 h-12 text-primary mb-4" />
               <h3 className="text-2xl font-bold mb-2">Our Story</h3>
               <p className="text-muted-foreground">
-                Founded by a group of passionate fitness enthusiasts, CardioVerse was born from a desire to break the monotony of traditional exercise and build a vibrant, energetic community.
+                Founded by a group of passionate fitness enthusiasts, QueensOfCardio was born from a desire to break the monotony of traditional exercise and build a vibrant, energetic community.
               </p>
             </div>
           </div>

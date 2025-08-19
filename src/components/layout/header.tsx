@@ -65,7 +65,7 @@ export function Header() {
       <div className={`container flex h-16 items-center transition-colors duration-300 justify-between ${isScrolled || isOpen ? 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:border md:rounded-2xl' : 'bg-transparent'}`}>
         <Link href="/" className="flex items-center space-x-2">
           <HeartPulse className="h-6 w-6 text-primary" />
-          <span className="font-bold text-lg">CARDIOVERSE</span>
+          <span className="font-bold text-lg">QUEENSOFCARDIO</span>
         </Link>
         
         <nav className="hidden md:flex items-center justify-center space-x-6">
@@ -91,7 +91,7 @@ export function Header() {
                 <div className="p-4 border-b border-border">
                    <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
                     <HeartPulse className="h-6 w-6 text-primary" />
-                    <span className="font-bold text-lg">CARDIOVERSE</span>
+                    <span className="font-bold text-lg">QUEENSOFCARDIO</span>
                    </Link>
                 </div>
                 <nav className="flex flex-col items-center justify-center flex-1 gap-8">
