@@ -20,9 +20,9 @@ const WHATSAPP_BOOKING_URL = "https://wa.link/utohga";
 
 const heroGridImages = [
   { src: 'https://placehold.co/800x600.png', alt: 'Woman stretching before workout', dataAiHint: 'woman stretching', className: 'col-span-2 row-span-2' },
-  { src: 'https://placehold.co/400x600.png', alt: 'Woman lifting weights', dataAiHint: 'woman lifting weights', className: '' },
+  { src: 'https://placehold.co/400x600.png', alt: 'Woman lifting weights', dataAiHint: 'woman lifting weights', className: 'row-span-2' },
   { src: 'https://placehold.co/800x600.png', alt: 'Group of women in a spin class', dataAiHint: 'spin class', className: 'col-span-2 row-span-2' },
-  { src: 'https://placehold.co/400x600.png', alt: 'Woman on a treadmill', dataAiHint: 'woman treadmill', className: '' },
+  { src: 'https://placehold.co/400x600.png', alt: 'Woman on a treadmill', dataAiHint: 'woman treadmill', className: 'row-span-2' },
   { src: 'https://placehold.co/400x300.png', alt: 'Close up of running shoes', dataAiHint: 'running shoes', className: '' },
   { src: 'https://placehold.co/400x300.png', alt: 'Woman drinking water after workout', dataAiHint: 'woman drinking water', className: '' },
   { src: 'https://placehold.co/400x600.png', alt: 'Woman doing yoga pose', dataAiHint: 'woman yoga', className: 'row-span-2' },
@@ -33,6 +33,8 @@ const heroGridImages = [
   { src: 'https://placehold.co/400x600.png', alt: 'Woman doing squats', dataAiHint: 'woman squats', className: 'row-span-2' },
   { src: 'https://placehold.co/400x300.png', alt: 'Dumbbells rack', dataAiHint: 'dumbbells rack', className: '' },
   { src: 'https://placehold.co/400x300.png', alt: 'Woman tying shoelaces', dataAiHint: 'tying shoelaces', className: '' },
+  { src: 'https://placehold.co/400x300.png', alt: 'Healthy food bowl', dataAiHint: 'healthy food' },
+  { src: 'https://placehold.co/400x300.png', alt: 'Fitness tracker on wrist', dataAiHint: 'fitness tracker' },
 ];
 
 export default function Home() {
@@ -41,7 +43,7 @@ export default function Home() {
       {/* Hero Section */}
       <section id="home" className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden">
         <div className="absolute inset-0 w-full h-full z-0">
-          <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-fr gap-4 h-full">
+          <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-fr gap-2 md:gap-4 h-full">
             {heroGridImages.map((image, index) => (
               <div key={index} className={`relative ${image.className}`}>
                 <Image
