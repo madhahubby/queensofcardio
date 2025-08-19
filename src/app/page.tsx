@@ -82,8 +82,8 @@ export default function Home() {
                           className="transition-transform duration-300 group-hover:scale-105"
                           data-ai-hint={block.dataAiHint}
                        />
-                       <div className="absolute inset-0 bg-black/50 flex items-center justify-center p-4">
-                            <h3 className="text-2xl font-bold text-white text-center">{block.title}</h3>
+                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center p-4">
+                            <h3 className="text-xl font-bold text-white text-center pb-2">{block.title}</h3>
                        </div>
                     </Link>
                   ))}
