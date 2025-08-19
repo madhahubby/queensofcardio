@@ -72,8 +72,8 @@ export function Header() {
     ));
 
   return (
-    <header className={`fixed top-0 z-50 w-full transition-colors duration-300 ${isScrolled ? 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b rounded-b-2xl' : 'bg-transparent'}`}>
-      <div className="container flex h-16 max-w-7xl items-center">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 mx-4 mt-4`}>
+      <div className={`container flex h-16 max-w-7xl items-center transition-colors duration-300 ${isScrolled ? 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border rounded-2xl' : 'bg-transparent'}`}>
         <div className="flex-1 flex items-center justify-start">
             <Link href="#home" className="flex items-center space-x-2" onClick={(e) => handleLinkClick(e, '#home')}>
               <HeartPulse className="h-6 w-6 text-primary" />
@@ -86,7 +86,7 @@ export function Header() {
         </nav>
 
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <Button asChild variant="outline" className="border-foreground text-foreground/80 hover:text-foreground font-bold bg-transparent hover:bg-transparent">
+          <Button asChild variant="outline" className="border-foreground/80 text-foreground/80 hover:text-foreground font-bold bg-transparent hover:bg-transparent">
             <a href={WHATSAPP_BOOKING_URL} target="_blank" rel="noopener noreferrer">Book Now</a>
           </Button>
         </div>
