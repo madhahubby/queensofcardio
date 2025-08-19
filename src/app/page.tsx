@@ -12,7 +12,6 @@ const workoutImages = [
 ];
 
 const featureBlocks = [
-    { src: 'https://placehold.co/600x600.png', alt: 'Group of smiling people in a fitness class', title: 'Join Our Community', dataAiHint: 'fitness community', href: '#about', external: false },
     { src: '/bmicalcsitepic.png', alt: 'BMI Calculator page screenshot', title: 'Calculate Your BMI', dataAiHint: 'bmi calculator', href: 'https://queensofcardiobmicalc.vercel.app', external: true },
     { src: '/routinegenai.png', alt: 'AI generating a fitness routine on a tablet', title: 'Fitness Routine Generator', dataAiHint: 'ai fitness', href: '/fitness-generator', external: false },
 ];
@@ -71,7 +70,7 @@ export default function Home() {
       {/* Features Grid Section */}
       <section id="gallery" className="py-16 md:py-24">
           <div className="container mx-auto px-4">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {featureBlocks.map((block, index) => (
                     <Link href={block.href} key={index} className="relative aspect-video group overflow-hidden rounded-lg" target={block.external ? '_blank' : undefined} rel={block.external ? 'noopener noreferrer' : undefined}>
                        <Image
