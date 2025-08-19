@@ -13,7 +13,7 @@ const workoutImages = [
 
 const featureBlocks = [
     { src: 'https://placehold.co/600x600.png', alt: 'Group of smiling people in a fitness class', title: 'Join Our Community', dataAiHint: 'fitness community', href: '#about' },
-    { src: 'https://placehold.co/600x600.png', alt: 'Scale and measuring tape for BMI calculation', title: 'Calculate Your BMI', dataAiHint: 'bmi calculator', href: '/bmi-calculator' },
+    { src: '/bmicalcsitepic.png', alt: 'BMI Calculator page screenshot', title: 'Calculate Your BMI', dataAiHint: 'bmi calculator', href: '/bmi-calculator' },
     { src: 'https://placehold.co/600x600.png', alt: 'AI generating a fitness routine on a tablet', title: 'Fitness Routine Generator', dataAiHint: 'ai fitness', href: '/fitness-generator' },
 ];
 
