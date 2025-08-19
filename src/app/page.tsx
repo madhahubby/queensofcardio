@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { Zap } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const workoutImages = [
   { src: 'https://placehold.co/600x600.png', alt: 'Yoga class in progress', dataAiHint: 'yoga class' },
@@ -11,11 +12,10 @@ const workoutImages = [
 ];
 
 const featureBlocks = [
-    { src: 'https://placehold.co/600x600.png', alt: 'Person measuring waist with a tape measure', title: 'Track Your Progress', dataAiHint: 'fitness tracking' },
-    { src: 'https://placehold.co/600x600.png', alt: 'Group of smiling people in a fitness class', title: 'Join Our Community', dataAiHint: 'fitness community' },
-    { src: 'https://placehold.co/600x600.png', alt: 'Woman in a calm yoga pose in a studio', title: 'Find Your Zen', dataAiHint: 'yoga pose' },
-    { src: 'https://placehold.co/600x600.png', alt: 'Close-up of a fitness tracker on a wrist', title: 'Integrate Your Tech', dataAiHint: 'fitness watch' },
-]
+    { src: 'https://placehold.co/600x600.png', alt: 'Group of smiling people in a fitness class', title: 'Join Our Community', dataAiHint: 'fitness community', href: '#about' },
+    { src: 'https://placehold.co/600x600.png', alt: 'Scale and measuring tape for BMI calculation', title: 'Calculate Your BMI', dataAiHint: 'bmi calculator', href: '/bmi-calculator' },
+    { src: 'https://placehold.co/600x600.png', alt: 'AI generating a fitness routine on a tablet', title: 'Fitness Routine Generator', dataAiHint: 'ai fitness', href: '/fitness-generator' },
+];
 
 const WHATSAPP_BOOKING_URL = "https://wa.me/1234567890?text=I'd%20like%20to%20book%20a%20class!";
 
@@ -71,21 +71,21 @@ export default function Home() {
       {/* Features Grid Section */}
       <section id="gallery" className="py-16 md:py-24">
           <div className="container mx-auto px-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {featureBlocks.map((block, index) => (
-                      <div key={index} className="relative aspect-video group overflow-hidden rounded-lg">
-                           <Image
-                              src={block.src}
-                              alt={block.alt}
-                              fill
-                              style={{ objectFit: 'cover' }}
-                              className="transition-transform duration-300 group-hover:scale-105"
-                              data-ai-hint={block.dataAiHint}
-                           />
-                           <div className="absolute inset-0 bg-black/50 flex items-center justify-center p-4">
-                                <h3 className="text-2xl font-bold text-white text-center">{block.title}</h3>
-                           </div>
-                      </div>
+                    <Link href={block.href} key={index} className="relative aspect-video group overflow-hidden rounded-lg">
+                       <Image
+                          src={block.src}
+                          alt={block.alt}
+                          fill
+                          style={{ objectFit: 'cover' }}
+                          className="transition-transform duration-300 group-hover:scale-105"
+                          data-ai-hint={block.dataAiHint}
+                       />
+                       <div className="absolute inset-0 bg-black/50 flex items-center justify-center p-4">
+                            <h3 className="text-2xl font-bold text-white text-center">{block.title}</h3>
+                       </div>
+                    </Link>
                   ))}
               </div>
           </div>
