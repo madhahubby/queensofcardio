@@ -83,7 +83,7 @@ export default function Home() {
                             data-ai-hint={block.dataAiHint}
                          />
                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-                              {block.title === 'AI Fitness Generator' ? null : <h3 className="text-xl font-bold text-white">{block.title}</h3>}
+                              {null}
                          </div>
                       </div>
                     );
