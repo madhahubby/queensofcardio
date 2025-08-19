@@ -12,9 +12,9 @@ const workoutImages = [
 ];
 
 const featureBlocks = [
-    { src: 'https://placehold.co/600x600.png', alt: 'Group of smiling people in a fitness class', title: 'Join Our Community', dataAiHint: 'fitness community', href: '#about' },
-    { src: '/bmicalcsitepic.png', alt: 'BMI Calculator page screenshot', title: 'Calculate Your BMI', dataAiHint: 'bmi calculator', href: '/bmi-calculator' },
-    { src: 'https://placehold.co/600x600.png', alt: 'AI generating a fitness routine on a tablet', title: 'Fitness Routine Generator', dataAiHint: 'ai fitness', href: '/fitness-generator' },
+    { src: 'https://placehold.co/600x600.png', alt: 'Group of smiling people in a fitness class', title: 'Join Our Community', dataAiHint: 'fitness community', href: '#about', external: false },
+    { src: '/bmicalcsitepic.png', alt: 'BMI Calculator page screenshot', title: 'Calculate Your BMI', dataAiHint: 'bmi calculator', href: 'https://queensofcardiobmicalc.vercel.app', external: true },
+    { src: 'https://placehold.co/600x600.png', alt: 'AI generating a fitness routine on a tablet', title: 'Fitness Routine Generator', dataAiHint: 'ai fitness', href: '/fitness-generator', external: false },
 ];
 
 const WHATSAPP_BOOKING_URL = "https://wa.me/1234567890?text=I'd%20like%20to%20book%20a%20class!";
@@ -73,7 +73,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {featureBlocks.map((block, index) => (
-                    <Link href={block.href} key={index} className="relative aspect-video group overflow-hidden rounded-lg">
+                    <Link href={block.href} key={index} className="relative aspect-video group overflow-hidden rounded-lg" target={block.external ? '_blank' : undefined} rel={block.external ? 'noopener noreferrer' : undefined}>
                        <Image
                           src={block.src}
                           alt={block.alt}
