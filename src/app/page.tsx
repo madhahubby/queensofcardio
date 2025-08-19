@@ -23,16 +23,11 @@ export default function Home() {
     <div className="bg-background text-foreground">
       {/* Hero Section */}
       <section id="home" className="relative w-full aspect-[3/2] flex flex-col items-center justify-center overflow-hidden rounded-2xl">
-        <Image
-          src="/my-hero-image.jpg"
-          alt="Hero background image"
-          fill
-          style={{ objectFit: "cover" }}
-          className="z-0 opacity-50"
-          priority
-          key={new Date().getTime()}
-        />
-        <div className="relative z-10 p-4">
+        <div className="absolute inset-0 -z-10 h-full w-full bg-background bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+        <div className="relative z-10 p-4 text-center">
+            <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary-foreground">
+              We are Queens Of Cardio
+            </h1>
         </div>
       </section>
 
