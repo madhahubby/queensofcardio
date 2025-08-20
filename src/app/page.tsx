@@ -85,7 +85,23 @@ export default function Home() {
   const [icons, setIcons] = React.useState<React.ReactNode[]>([]);
 
   React.useEffect(() => {
-    setIcons(Array.from({ length: 40 }).map((_, i) => <NeonIcon key={i} />));
+    const getIconCount = () => {
+      if (window.innerWidth < 768) {
+        return 20; // Fewer icons for mobile screens
+      }
+      return 40; // More icons for larger screens
+    };
+
+    const count = getIconCount();
+    setIcons(Array.from({ length: count }).map((_, i) => <NeonIcon key={i} />));
+
+    const handleResize = () => {
+      const newCount = getIconCount();
+      setIcons(Array.from({ length: newCount }).map((_, i) => <NeonIcon key={i} />));
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
