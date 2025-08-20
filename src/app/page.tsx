@@ -43,7 +43,7 @@ const NeonIcon = () => {
   const [animationProps, setAnimationProps] = React.useState({
     animationDuration: '5s',
     animationDelay: '0s',
-    size: '60px',
+    size: '25px',
     color: 'text-primary',
     opacity: 0.2,
   });
@@ -56,7 +56,7 @@ const NeonIcon = () => {
     setAnimationProps({
       animationDuration: `${Math.random() * 5 + 3}s`,
       animationDelay: `${Math.random() * 5}s`,
-      size: `${Math.random() * 60 + 20}px`,
+      size: `${Math.random() * 15 + 10}px`, // Range from 10px to 25px
       color: ['text-primary', 'text-accent', 'text-secondary-foreground'][Math.floor(Math.random() * 3)],
       opacity: Math.random() * 0.3 + 0.1,
     });
@@ -85,7 +85,7 @@ export default function Home() {
   const [icons, setIcons] = React.useState<React.ReactNode[]>([]);
 
   React.useEffect(() => {
-    setIcons(Array.from({ length: 30 }).map((_, i) => <NeonIcon key={i} />));
+    setIcons(Array.from({ length: 40 }).map((_, i) => <NeonIcon key={i} />));
   }, []);
 
   return (
