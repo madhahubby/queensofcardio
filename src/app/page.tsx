@@ -1,6 +1,7 @@
 
+
 import { Button } from '@/components/ui/button';
-import { Zap } from 'lucide-react';
+import { Zap, Dumbbell, HeartPulse, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -18,54 +19,59 @@ const featureBlocks = [
 
 const WHATSAPP_BOOKING_URL = "https://wa.link/utohga";
 
-const heroGridImages = [
-  { src: 'https://placehold.co/800x600.png', alt: 'Woman stretching before workout', dataAiHint: 'woman stretching', className: 'col-span-2 row-span-2' },
-  { src: 'https://placehold.co/400x600.png', alt: 'Woman lifting weights', dataAiHint: 'woman lifting weights', className: 'row-span-2' },
-  { src: 'https://placehold.co/400x600.png', alt: 'Woman on a treadmill', dataAiHint: 'woman treadmill', className: 'row-span-2' },
-  { src: 'https://placehold.co/800x600.png', alt: 'Group of women in a spin class', dataAiHint: 'spin class', className: 'col-span-2 row-span-2' },
-  { src: 'https://placehold.co/400x300.png', alt: 'Close up of running shoes', dataAiHint: 'running shoes', className: '' },
-  { src: 'https://placehold.co/400x300.png', alt: 'Woman drinking water after workout', dataAiHint: 'woman drinking water', className: '' },
-  { src: 'https://placehold.co/400x600.png', alt: 'Woman doing yoga pose', dataAiHint: 'woman yoga', className: 'row-span-2' },
-  { src: 'https://placehold.co/400x300.png', alt: 'Kettlebells on a gym floor', dataAiHint: 'kettlebells gym', className: '' },
-  { src: 'https://placehold.co/400x300.png', alt: 'Kettlebells on a gym floor', dataAiHint: 'kettlebells gym', className: '' },
-  { src: 'https://placehold.co/400x300.png', alt: 'Kettlebells on a gym floor', dataAiHint: 'kettlebells gym', className: '' },
-  { src: 'https://placehold.co/400x300.png', alt: 'Woman smiling after a workout', dataAiHint: 'woman smiling', className: '' },
-  { src: 'https://placehold.co/400x600.png', alt: 'Woman on a rowing machine', dataAiHint: 'woman rowing', className: 'row-span-2' },
-  { src: 'https://placehold.co/400x600.png', alt: 'Woman on a rowing machine', dataAiHint: 'woman rowing', className: 'row-span-2' },
-  { src: 'https://placehold.co/800x600.png', alt: 'Fitness class in a modern gym', dataAiHint: 'fitness class', className: 'col-span-2 row-span-2' },
-  { src: 'https://placehold.co/400x600.png', alt: 'Woman doing squats', dataAiHint: 'woman squats', className: 'row-span-2' },
-  { src: 'https://placehold.co/400x300.png', alt: 'Dumbbells rack', dataAiHint: 'dumbbells rack', className: '' },
-  { src: 'https://placehold.co/400x300.png', alt: 'Woman tying shoelaces', dataAiHint: 'tying shoelaces', className: '' },
-  { src: 'https://placehold.co/400x300.png', alt: 'Woman tying shoelaces', dataAiHint: 'tying shoelaces', className: '' },
-  { src: 'https://placehold.co/400x300.png', alt: 'Woman tying shoelaces', dataAiHint: 'tying shoelaces', className: '' },
-  { src: 'https://placehold.co/400x300.png', alt: 'Healthy food bowl', dataAiHint: 'healthy food' },
-  { src: 'https://placehold.co/400x300.png', alt: 'Fitness tracker on wrist', dataAiHint: 'fitness tracker' },
-];
+const Icon = ({ className, ...rest }: {className?: string, [key: string]: any}) => {
+  const icons = [
+    <Dumbbell key="dumbbell" className={className} {...rest} />,
+    <HeartPulse key="heartpulse" className={className} {...rest} />,
+    <Sparkles key="sparkles" className={className} {...rest} />,
+    <svg key="shoe" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} {...rest}><path d="M7 17l-4 4"></path><path d="M14 14l3-3"></path><path d="M18 22V8.5c0-1.4-1.1-2.5-2.5-2.5S13 7.1 13 8.5V14"></path><path d="M11 14V8a2 2 0 0 0-2-2H4.5a2.5 2.5 0 0 0 0 5H8"></path></svg>,
+    <svg key="jumprope" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} {...rest}><path d="M4 14a4 4 0 1 0 8 0c0-4.42-7.58-8-16-8"></path><path d="M20 14a4 4 0 1 1-8 0c0-4.42 7.58-8 16-8"></path><path d="M4 14v4a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2v-4"></path><path d="M16 14v4a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2v-4"></path></svg>,
+  ]
+  return icons[Math.floor(Math.random() * icons.length)];
+}
+
+const NeonIcon = () => {
+  const top = `${Math.random() * 100}%`;
+  const left = `${Math.random() * 100}%`;
+  const animationDuration = `${Math.random() * 5 + 3}s`;
+  const animationDelay = `${Math.random() * 5}s`;
+  const size = `${Math.random() * 80 + 40}px`;
+  const colors = ['text-primary', 'text-accent', 'text-secondary-foreground'];
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  const opacity = Math.random() * 0.4 + 0.1;
+
+  return (
+    <div
+      className="absolute animate-pulse"
+      style={{
+        top,
+        left,
+        animationDuration,
+        animationDelay,
+        width: size,
+        height: size,
+        opacity,
+      }}
+    >
+      <Icon className={`w-full h-full ${color}`} />
+    </div>
+  );
+};
+
 
 export default function Home() {
   return (
     <div className="bg-background text-foreground">
       {/* Hero Section */}
-      <section id="home" className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden">
+      <section id="home" className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-black">
         <div className="absolute inset-0 w-full h-full z-0">
-          <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-fr gap-2 md:gap-4 h-full">
-            {heroGridImages.map((image, index) => (
-              <div key={index} className={`relative ${image.className}`}>
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  data-ai-hint={image.dataAiHint}
-                  className="grayscale opacity-30"
-                />
-              </div>
-            ))}
-          </div>
+          {Array.from({ length: 30 }).map((_, i) => (
+            <NeonIcon key={i} />
+          ))}
         </div>
-        <div className="absolute inset-0 bg-black/50 z-10" />
+        <div className="absolute inset-0 bg-black/30 z-10" />
         <div className="relative z-20 p-4 text-center">
-            <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-white">
+            <h1 className="text-6xl md:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-white">
               We are Queens Of Cardio
             </h1>
         </div>
