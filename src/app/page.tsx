@@ -97,7 +97,7 @@ export default function Home() {
         </div>
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="relative z-20 p-4 text-center">
-            <h1 className="text-6xl md:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-white">
+            <h1 className="text-6xl md:text-[80px] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-white">
               We are Queens Of Cardio
             </h1>
         </div>
