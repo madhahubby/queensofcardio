@@ -56,7 +56,7 @@ const NeonIcon = () => {
     setAnimationProps({
       animationDuration: `${Math.random() * 5 + 3}s`,
       animationDelay: `${Math.random() * 5}s`,
-      size: `${Math.random() * 15 + 10}px`, // Range from 10px to 25px
+      size: `${Math.random() * 390 + 10}px`, // Range from 10px to 400px
       color: ['text-primary', 'text-accent', 'text-secondary-foreground'][Math.floor(Math.random() * 3)],
       opacity: Math.random() * 0.3 + 0.1,
     });
