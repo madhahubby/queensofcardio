@@ -1,5 +1,7 @@
 
+"use client";
 
+import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { Zap, Dumbbell, HeartPulse, Sparkles } from 'lucide-react';
 import Image from 'next/image';
@@ -31,45 +33,63 @@ const Icon = ({ className, ...rest }: {className?: string, [key: string]: any}) 
 }
 
 const NeonIcon = () => {
-  const top = `${Math.random() * 100}%`;
-  const left = `${Math.random() * 100}%`;
-  const animationDuration = `${Math.random() * 5 + 3}s`;
-  const animationDelay = `${Math.random() * 5}s`;
-  const size = `${Math.random() * 80 + 40}px`;
-  const colors = ['text-primary', 'text-accent', 'text-secondary-foreground'];
-  const color = colors[Math.floor(Math.random() * colors.length)];
-  const opacity = Math.random() * 0.4 + 0.1;
+  const [position, setPosition] = React.useState({ top: '0%', left: '0%' });
+  const [animationProps, setAnimationProps] = React.useState({
+    animationDuration: '5s',
+    animationDelay: '0s',
+    size: '60px',
+    color: 'text-primary',
+    opacity: 0.2,
+  });
+
+  React.useEffect(() => {
+    setPosition({
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+    });
+    setAnimationProps({
+      animationDuration: `${Math.random() * 5 + 3}s`,
+      animationDelay: `${Math.random() * 5}s`,
+      size: `${Math.random() * 60 + 20}px`,
+      color: ['text-primary', 'text-accent', 'text-secondary-foreground'][Math.floor(Math.random() * 3)],
+      opacity: Math.random() * 0.3 + 0.1,
+    });
+  }, []);
 
   return (
     <div
       className="absolute animate-pulse"
       style={{
-        top,
-        left,
-        animationDuration,
-        animationDelay,
-        width: size,
-        height: size,
-        opacity,
+        top: position.top,
+        left: position.left,
+        width: animationProps.size,
+        height: animationProps.size,
+        animationDuration: animationProps.animationDuration,
+        animationDelay: animationProps.animationDelay,
+        opacity: animationProps.opacity,
       }}
     >
-      <Icon className={`w-full h-full ${color}`} />
+      <Icon className={`w-full h-full ${animationProps.color}`} />
     </div>
   );
 };
 
 
 export default function Home() {
+  const [icons, setIcons] = React.useState<React.ReactNode[]>([]);
+
+  React.useEffect(() => {
+    setIcons(Array.from({ length: 30 }).map((_, i) => <NeonIcon key={i} />));
+  }, []);
+
   return (
     <div className="bg-background text-foreground">
       {/* Hero Section */}
       <section id="home" className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-black">
         <div className="absolute inset-0 w-full h-full z-0">
-          {Array.from({ length: 30 }).map((_, i) => (
-            <NeonIcon key={i} />
-          ))}
+          {icons}
         </div>
-        <div className="absolute inset-0 bg-black/30 z-10" />
+        <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="relative z-20 p-4 text-center">
             <h1 className="text-6xl md:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-white">
               We are Queens Of Cardio
