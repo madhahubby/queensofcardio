@@ -7,7 +7,7 @@ import Link from 'next/link';
 const workoutImages = [
   { src: '/yoga.png', alt: 'Yoga class in progress', dataAiHint: 'yoga class' },
   { src: '/bodytoning.png', alt: 'Body toning class', dataAiHint: 'body toning' },
-  { src: '/functionaltraining.png', alt: 'Functional training session', dataAiHint: 'functional training' },
+  { src: '/funtionaltraining.png', alt: 'Functional training session', dataAiHint: 'functional training' },
   { src: '/selfdefence.png', alt: 'Self-defence class', dataAiHint: 'self defence' },
 ];
 

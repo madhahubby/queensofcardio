@@ -3,7 +3,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { useState, useEffect } from "react";
 import { usePathname } from 'next/navigation';
@@ -89,6 +89,7 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-full bg-background/95 backdrop-blur">
+              <SheetTitle className="sr-only">Menu</SheetTitle>
               <div className="flex flex-col h-full">
                 <div className="p-4 border-b border-border">
                    <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
