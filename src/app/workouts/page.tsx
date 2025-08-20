@@ -1,4 +1,4 @@
-
+import type { Metadata } from 'next';
 import Image from 'next/image';
 
 const workoutImages = [
@@ -7,6 +7,11 @@ const workoutImages = [
   { src: 'https://placehold.co/600x600.png', alt: 'Dance fitness class with energetic participants', dataAiHint: 'dance fitness' },
   { src: 'https://placehold.co/600x600.png', alt: 'Strength training workout with weights', dataAiHint: 'strength training' },
 ];
+
+export const metadata: Metadata = {
+    title: 'Our Workouts',
+    description: 'Explore our wide range of fun, trainer-led group workouts at QueensOfCardio, including yoga, HIIT, dance fitness, functional training, and strength training in New Delhi.',
+};
 
 export default function WorkoutsPage() {
   return (

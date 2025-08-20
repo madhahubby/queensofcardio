@@ -1,6 +1,11 @@
-
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import { HeartPulse, Users, Target } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description: 'Learn about the mission, vision, and story of QueensOfCardio. We are a fitness community in New Delhi dedicated to making workouts fun, accessible, and empowering for women.',
+};
 
 export default function AboutPage() {
   return (

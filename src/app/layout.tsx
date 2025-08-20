@@ -5,8 +5,33 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'QueensOfCardio',
-  description: 'Your universe of cardio fitness.',
+  title: {
+    default: 'QueensOfCardio | Fun Group Fitness for Women in New Delhi',
+    template: '%s | QueensOfCardio',
+  },
+  description: 'Join QueensOfCardio for fun, trainer-led group workouts in New Delhi. We offer yoga, body toning, functional training, and self-defence classes for all fitness levels.',
+  keywords: ['fitness', 'group workout', 'yoga', 'self defence', 'body toning', 'functional training', 'New Delhi', 'women fitness'],
+  openGraph: {
+    title: 'QueensOfCardio | Fun Group Fitness for Women',
+    description: 'Fun, trainer-led group workouts designed for every fitness level. Find the perfect class to crush your goals.',
+    url: 'https://queensofcardio.vercel.app', // Replace with your actual domain
+    siteName: 'QueensOfCardio',
+    images: [
+      {
+        url: 'https://queensofcardio.vercel.app/og-image.png', // Replace with your actual OG image URL
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'QueensOfCardio | Fun Group Fitness for Women',
+    description: 'Fun, trainer-led group workouts designed for every fitness level. Find the perfect class to crush your goals.',
+    // images: ['https://queensofcardio.vercel.app/twitter-image.png'], // Replace with your actual Twitter image URL
+  },
 };
 
 export default function RootLayout({
