@@ -5,10 +5,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const workoutImages = [
-  { src: 'https://placehold.co/600x600.png', alt: 'Yoga class in progress', dataAiHint: 'yoga class' },
-  { src: 'https://placehold.co/600x600.png', alt: 'High-intensity interval training session', dataAiHint: 'hiit workout' },
-  { src: 'https://placehold.co/600x600.png', alt: 'Dance fitness class with energetic participants', dataAiHint: 'dance fitness' },
-  { src: 'https://placehold.co/600x600.png', alt: 'Strength training workout with weights', dataAiHint: 'strength training' },
+  { src: '/yoga.png', alt: 'Yoga class in progress', dataAiHint: 'yoga class' },
+  { src: '/bodytoning.png', alt: 'Body toning class', dataAiHint: 'body toning' },
+  { src: '/functionaltraining.png', alt: 'Functional training session', dataAiHint: 'functional training' },
+  { src: '/selfdefence.png', alt: 'Self-defence class', dataAiHint: 'self defence' },
 ];
 
 const featureBlocks = [
@@ -95,9 +95,9 @@ export default function Home() {
                           <Image
                               src={image.src}
                               alt={image.alt}
-                              fill
-                              style={{ objectFit: 'cover' }}
-                              className="transition-transform duration-300 group-hover:scale-105 opacity-50 group-hover:opacity-75"
+                              width={600}
+                              height={600}
+                              className="transition-transform duration-300 group-hover:scale-105 opacity-50 group-hover:opacity-75 object-cover w-full h-full"
                               data-ai-hint={image.dataAiHint}
                           />
                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
