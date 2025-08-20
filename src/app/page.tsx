@@ -15,8 +15,8 @@ const workoutImages = [
 ];
 
 const featureBlocks = [
-    { src: `/bmicalcsitepic.png?v=1721997993000`, alt: 'BMI Calculator page screenshot', title: 'Calculate Your BMI', dataAiHint: 'bmi calculator', href: 'https://queensofcardiobmicalc.vercel.app', external: true },
-    { src: `/routinegenai.png?v=1721997993000`, alt: 'AI generating a fitness routine on a tablet', title: 'AI Fitness Generator', dataAiHint: 'ai fitness', href: 'https://fitgenius-beta.vercel.app/generator', external: true },
+    { src: `/bmicalcsitepic.png?v=1721997993000`, alt: 'BMI Calculator page screenshot', title: 'Calculate Your BMI', dataAiHint: 'bmi calculator', href: '/bmi-calculator', external: false },
+    { src: `/routinegenai.png?v=1721997993000`, alt: 'AI generating a fitness routine on a tablet', title: 'AI Fitness Generator', dataAiHint: 'ai fitness', href: '/fitness-routine-generator', external: false },
 ];
 
 const WHATSAPP_BOOKING_URL = "https://wa.link/utohga";
@@ -29,7 +29,13 @@ const Icon = ({ className, ...rest }: {className?: string, [key: string]: any}) 
     <svg key="shoe" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} {...rest}><path d="M7 17l-4 4"></path><path d="M14 14l3-3"></path><path d="M18 22V8.5c0-1.4-1.1-2.5-2.5-2.5S13 7.1 13 8.5V14"></path><path d="M11 14V8a2 2 0 0 0-2-2H4.5a2.5 2.5 0 0 0 0 5H8"></path></svg>,
     <svg key="jumprope" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} {...rest}><path d="M4 14a4 4 0 1 0 8 0c0-4.42-7.58-8-16-8"></path><path d="M20 14a4 4 0 1 1-8 0c0-4.42 7.58-8 16-8"></path><path d="M4 14v4a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2v-4"></path><path d="M16 14v4a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2v-4"></path></svg>,
   ]
-  return icons[Math.floor(Math.random() * icons.length)];
+  const [icon, setIcon] = React.useState<React.ReactNode>(null);
+
+  React.useEffect(() => {
+    setIcon(icons[Math.floor(Math.random() * icons.length)]);
+  }, []);
+
+  return icon;
 }
 
 const NeonIcon = () => {
@@ -99,11 +105,13 @@ export default function Home() {
 
       {/* Membership Section */}
       <section id="about" className="py-16 md:py-24">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-8 text-center md:text-left">
-            <Image src="/membership image.png" alt="Person sitting on a yoga mat" width={300} height={300} className="rounded-lg shadow-2xl" data-ai-hint="membership" />
-            <h2 className="text-3xl md:text-5xl font-bold max-w-lg leading-tight">
-                One membership for all your fitness needs.
-            </h2>
+        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-12">
+            <Image src="/membership image.png" alt="Person sitting on a yoga mat" width={400} height={400} className="rounded-lg shadow-2xl" data-ai-hint="membership" />
+            <div className="max-w-lg text-center md:text-left">
+              <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4">
+                  One membership for all your fitness needs.
+              </h2>
+            </div>
         </div>
       </section>
       
@@ -127,6 +135,9 @@ export default function Home() {
                               data-ai-hint={image.dataAiHint}
                           />
                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                           <div className="absolute inset-x-0 bottom-0 p-4">
+                                <h3 className="text-lg font-bold text-white">{image.alt.replace(' class', '').replace(' in progress', '').replace(' session', '')}</h3>
+                           </div>
                       </div>
                   ))}
               </div>
@@ -149,7 +160,7 @@ export default function Home() {
                             data-ai-hint={block.dataAiHint}
                          />
                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-                              {null}
+                              <h3 className="text-white font-bold text-xl">{block.title}</h3>
                          </div>
                       </div>
                     );
