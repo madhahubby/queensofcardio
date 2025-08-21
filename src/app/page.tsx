@@ -16,7 +16,7 @@ const workoutImages = [
 
 const featureBlocks = [
     { src: `/bmicalcsitepic.png?v=1721997993000`, alt: 'BMI Calculator page screenshot', title: 'Calculate Your BMI', dataAiHint: 'bmi calculator', href: 'https://queensofcardiobmicalc.vercel.app', external: true },
-    { src: `/routinegenai.png?v=1721997993000`, alt: 'AI generating a fitness routine on a tablet', title: 'AI Fitness Generator', dataAiHint: 'ai fitness', href: '/fitness-routine-generator', external: false },
+    { src: `/routinegenai.png?v=1721997993000`, alt: 'AI generating a fitness routine on a tablet', title: 'AI Fitness Generator', dataAiHint: 'ai fitness', href: 'https://fitgenius-beta.vercel.app/generator', external: true },
 ];
 
 const WHATSAPP_BOOKING_URL = "https://wa.link/utohga";
@@ -58,7 +58,7 @@ const NeonIcon = () => {
       animationDelay: `${Math.random() * 5}s`,
       size: `${Math.random() * 120 + 10}px`, // Range from 10px to 130px
       color: ['text-primary', 'text-accent', 'text-secondary-foreground'][Math.floor(Math.random() * 3)],
-      opacity: Math.random() * 0.2,
+      opacity: Math.random() * 0.1,
     });
   }, []);
 
